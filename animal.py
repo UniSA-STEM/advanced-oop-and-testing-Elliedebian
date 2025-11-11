@@ -11,12 +11,13 @@ from datetime import date
 
 """Base class for all animals in the zoo"""
 class Animal:
-    def __init__(self, name: str, species: str, age: int, diet: str, environment_type: str) -> None:
+    def __init__(self, name: str, species: str, age: int, diet: str, environment_type: str, category: str) -> None:
         self.__name = name
         self.__species = species
         self.__age = age
         self.__diet = diet
         self.__environment_type = environment_type
+        self.__category = category
         self.__health_records = []
 
         self.set_name(name)
@@ -24,3 +25,4 @@ class Animal:
         self.set_age(age)
         self.set_diet(diet)
         self.set_environment_type(environment_type)
+
