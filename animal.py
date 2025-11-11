@@ -49,3 +49,25 @@ class Animal:
 
     species = property(get_species, set_species)
 
+    def get_age(self) -> int:
+        return self.__age
+
+    def set_age(self, value: int) -> None:
+        if isinstance(value, int) and value >= 0:
+            self.__age = value
+        else:
+            self.__age = 0
+
+    age = property(get_age, set_age)
+
+    def get_diet(self) -> str:
+        return self.__diet
+
+    def set_diet(self, value: str) -> None:
+        if isinstance(value, str) and value:
+            self.__diet = value
+        else:
+            self.__diet = "Unknown"
+
+    diet = property(get_diet, set_diet)
+
