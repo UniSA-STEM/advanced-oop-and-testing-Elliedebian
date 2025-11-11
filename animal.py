@@ -71,3 +71,26 @@ class Animal:
 
     diet = property(get_diet, set_diet)
 
+    def get_environment_type(self) -> str:
+        return self.__environment_type
+
+    def set_environment_type(self, value: str) -> None:
+        if isinstance(value, str) and value:
+            self.__environment_type = value.lower()
+        else:
+            self.__environment_type = "Unknown"
+
+    environment_type = property(get_environment_type, set_environment_type)
+
+    def get_category(self) -> str:
+        return self.__category
+
+    def set_category(self, value: str) -> None:
+        valid_categories = ("mammal", "reptile", "bird", "other" )
+        if isinstance(value, str) and value.lower() in valid_categories:
+            self.__category = value.lower()
+        else:
+            self.__category = ("other")
+
+    category = property(get_category, set_category)
+
