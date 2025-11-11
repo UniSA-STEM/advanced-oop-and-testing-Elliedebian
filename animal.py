@@ -94,3 +94,7 @@ class Animal:
 
     category = property(get_category, set_category)
 
+    def get_health_records(self) -> list:
+        return list(self.__health_records)
+
+    health_records = property(get_health_records)
