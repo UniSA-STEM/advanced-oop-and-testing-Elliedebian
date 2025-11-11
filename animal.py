@@ -26,3 +26,26 @@ class Animal:
         self.set_diet(diet)
         self.set_environment_type(environment_type)
 
+"""Getters, setters, and properties"""
+    def get_name(self) -> str:
+        return self.__name
+
+    def set_name(self, value: str) -> None:
+        if isinstance(value, str) and value:
+            self.__name = value
+        else:
+            self.__name = "Unknown"
+
+    name = property(get_name, set_name)
+
+    def get_species(self) -> str:
+        return self.__species
+
+    def set_species(self, value: str) -> None:
+        if isinstance(value, str) and value:
+            self.__species = value
+        else:
+            self.__species = "Unknown"
+
+    species = property(get_species, set_species)
+
