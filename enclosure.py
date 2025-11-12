@@ -81,3 +81,32 @@ class Enclosure:
         """Remove an animal from the enclosure"""
         if animal in self.__animals:
             self.__animals.remove(animal)
+
+    def clean(self) -> None:
+        """Restore the cleanliness to 100"""
+        self.__cleanliness = 100
+
+    def soil(self, amount:int) -> None:
+        """Reduce cleanliness by a given amount"""
+        if isinstance(amount, int) and amount > 0:
+            self.__cleanliness -= amount
+        else:
+            self.__cleanliness -= 10
+        if self.__cleanliness < 0:
+            self.__cleanliness = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
