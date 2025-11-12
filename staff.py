@@ -59,4 +59,14 @@ class Staff:
         else:
             print(f"{self.__name} is not assigned to clean enclosures.")
 
+    def health_check(self, animal: Animal, description: str, severity: str) -> None:
+        """Perform a health check if the staff member is a veterinarian"""
+        if self.__role == "veterinarian":
+            animal.add_health_issue(description, severity)
+            print(f"{self.__name} recorded a health issue for {animal.name}.")
+        else:
+            print(f"{self.__name} cannot perform health checks.")
 
+    def __str__(self) -> str:
+        """Return a simple string representation of the staff member"""
+        return f"{self.__name} ({self.__role})"
