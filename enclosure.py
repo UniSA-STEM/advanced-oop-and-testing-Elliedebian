@@ -114,17 +114,3 @@ class Enclosure:
         """Return a string representation of the enclosure"""
         return self.get_status()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
