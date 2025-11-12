@@ -45,3 +45,25 @@ class Enclosure:
 
     environment = property(get_environment, set_environment)
 
+    def get_size(self) -> int:
+        return self.__size
+
+    def set_size(self, value:int) -> None:
+        if isinstance(value, int) and value > 0:
+            self.__size = value
+        else:
+            self.__size = 1
+
+    size = property(get_size, set_size)
+
+    def get_cleanness(self) -> int:
+        return self.__cleanliness
+
+    cleanness = property(get_cleanness)
+
+    def get_animals(self) -> list:
+        return self.__animals
+
+    animals = property(get_animals)
+
+    """Behaviours"""
