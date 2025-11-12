@@ -43,3 +43,20 @@ class Staff:
 
     role = property(get_role, set_role)
 
+    """Behaviours"""
+    def feed_animal(self, animal: Animal) -> None:
+        """Feed an animal if the staff member is a zookeeper"""
+        if self.__role == "zookeeper":
+            print(f"{self.__name} feeds {animal.name}. {animal.eat()}")
+        else:
+            print(f"{self.__name} is not assigned to feed animals.")
+
+    def clean_enclosure(self, enclosure: Enclosure) -> None:
+        """Clean an enclosure if the staff member is a zookeeper"""
+        if self.__role == "zookeeper":
+            enclosure.clean()
+            print(f"{self.__name} cleaned {enclosure.name}.")
+        else:
+            print(f"{self.__name} is not assigned to clean enclosures.")
+
+
