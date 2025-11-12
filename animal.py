@@ -26,7 +26,7 @@ class Animal:
         self.set_diet(diet)
         self.set_environment_type(environment_type)
 
-"""Getters, setters, and properties"""
+    """Getters, setters, and properties"""
     def get_name(self) -> str:
         return self.__name
 
