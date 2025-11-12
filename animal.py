@@ -98,3 +98,53 @@ class Animal:
         return list(self.__health_records)
 
     health_records = property(get_health_records)
+
+    """Behaviours"""
+
+    def add_health_issue(self, description: str, severity: str, under_treatment: bool = True) -> None:
+        """To add a new health issue to the record"""
+        if isinstance(description, str) and description:
+            desc = description
+        else:
+            desc = "No description"
+
+        if isinstance(description, str) and severity.lower() in ("low", "moderate", "high", "critical"):
+            level = severity.lower()
+        else:
+            level = "low"
+
+        record = dict(date=date.today(), description=desc, severity=level, under_treatment=bool(under_treatment))
+        self.__health_records.append(record)
+
+    def mark_recovered(self) -> None:
+        """Mark the latest health issue as recovered"""
+        if self.__health_records:
+            self.__health_records[-1]["under_treatment"] = False
+
+    def is_under_treatment(self) -> bool:
+        """Check if the animal is under treatment"""
+        for record in self.__health_records:
+            if record["under_treatment"]:
+                return True
+        return False
+
+    def make_sound(self) -> str:
+        """Make the animal's sound"""
+        if self.__category == "mammal":
+            return f"{self.__name} lets out a deep mammal call."
+        elif self.__category == "reptile":
+            return f"{self.__name} hisses quietly."
+        elif self.__category == "bird":
+            return f"{self.__name} chirps."
+        return f"{self.__name} makes a sound."
+
+    def eat(self) -> str:
+        return f"{self.__name} is eating {self.__diet}."
+
+    def sleep(self) -> str:
+        return f"{self.__name} is sleeping."
+
+    def __str__(self) -> str:
+        """String representation showing category-based information"""
+        return f"{self.__category.capitalize()} -  {self.__name} ({self.__species}), {self.__age} years old."
+
