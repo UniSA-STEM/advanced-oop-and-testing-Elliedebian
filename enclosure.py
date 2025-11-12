@@ -67,3 +67,17 @@ class Enclosure:
     animals = property(get_animals)
 
     """Behaviours"""
+    def add_animal(self, animal:Animal) -> None:
+        """Add an animal to the enclosure if compatible"""
+        if not isinstance(animal, Animal):
+            return
+        if len(self.__animals) >= self.__size:
+            return
+        if animal.environment_type != self.__environment_type:
+            return
+        self.__animals.append(animal)
+
+    def remove_animal(self, animal:Animal) -> None:
+        """Remove an animal from the enclosure"""
+        if animal in self.__animals:
+            self.__animals.remove(animal)
