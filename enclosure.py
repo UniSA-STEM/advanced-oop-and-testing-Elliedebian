@@ -95,6 +95,24 @@ class Enclosure:
         if self.__cleanliness < 0:
             self.__cleanliness = 0
 
+    def get_status(self) -> str:
+        """Get a simple status summary of the enclosure"""
+        return (
+            f"Enclosure '{self.__name}' "
+            f" [{self.__environment_type}] - Cleanliness: {self.__cleanliness}%,"
+            f" Animals: {len(self.__animals)}"
+        )
+
+    def list_animals(self) -> str:
+        """Return a list of animals currently in the enclosure"""
+        if not self.__animals:
+            return "No animals in this enclosure"
+        animal_names = ", ".join(animal.name for animal in self.__animals)
+        return f"Animals: {animal_names}"
+
+    def __str__(self) -> str:
+        """Return a string representation of the enclosure"""
+        return self.get_status()
 
 
 
