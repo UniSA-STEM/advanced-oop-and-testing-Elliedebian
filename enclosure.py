@@ -22,3 +22,26 @@ class Enclosure:
         self.set_environment(environment_type)
         self.set_size(size)
 
+    """Getters, setters, and properties"""
+    def get_name(self) -> str:
+        return self.__name
+
+    def set_name(self, value:str) -> None:
+        if isinstance(value, str) and value:
+            self.__name = value
+        else:
+            self.__name = "Unknown"
+
+    name = property(get_name, set_name)
+
+    def get_environment(self) -> str:
+        return self.__environment_type
+
+    def set_environment(self, value:str) -> None:
+        if isinstance(value, str) and value:
+            self.__environment_type = value.lower()
+        else:
+            self.__environment_type = "Unknown"
+
+    environment = property(get_environment, set_environment)
+
