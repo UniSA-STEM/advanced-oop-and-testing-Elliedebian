@@ -23,3 +23,5 @@ def main() -> None:
     turtle_enclosure = Enclosure("Turtle Pool", "aquatic", 3)
     aviary_enclosure = Enclosure("Bird Aviary", "aviary", 5)
 
+    zoe = Staff("Zoe", "zookeeper")
+    victor = Staff("Victor", "veterinarian")
