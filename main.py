@@ -19,3 +19,7 @@ def main() -> None:
     piper = Animal("Piper", "Parrot", 2, "Seeds", "Aviary", "bird")
     rocky = Animal("Rocky", "Crocodile", 25, "Carnivore", "Aquatic", "reptile")
 
+    lion_enclosure = Enclosure("Lion Den", "savannah", 2)
+    turtle_enclosure = Enclosure("Turtle Pool", "aquatic", 3)
+    aviary_enclosure = Enclosure("Bird Aviary", "aviary", 5)
+
