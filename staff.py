@@ -35,7 +35,7 @@ class Staff:
         return self.__role
 
     def set_role(self, value: str) -> None:
-        valid_role = ("zookeeper", "veterinarian")
+        valid_roles = ("zookeeper", "veterinarian")
         if isinstance(value, str) and value.lower() in valid_roles:
             self.__role = value.lower()
         else:
